@@ -53,21 +53,21 @@ function displayWeather(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
 }
-let apiKey = "e974f932ed118d7566475c3e521f6f16";
+let apiKey = "597c40c39084687093b091cd48b366f8";
 let apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?q=Dallas&appid=${apiKey}&units=metric";
 axios.get(apiUrl).then(displayTemperature);
 
 function searchCity(city) {
-  let apiKey = "e974f932ed118d7566475c3e521f6f16";
+  let apiKey = "597c40c39084687093b091cd48b366f8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
 function searchIcon(icon) {
-  let apiKey = "e974f932ed118d7566475c3e521f6f16";
+  let apiKey = "597c40c39084687093b091cd48b366f8";
   let apiUrl =
-    "//api.openweathermap.org/data/2.5/weather?q=Dallas&appid=e974f932ed118d7566475c3e521f6f16&units=metric";
+    "//api.openweathermap.org/data/2.5/weather?q=Dallas&appid=597c40c39084687093b091cd48b366f8&units=metric";
   axios.get(apiUrl).then(displayIcon);
 }
 
@@ -81,7 +81,7 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 function retrievePosition(position) {
-  let apiKey = "e974f932ed118d7566475c3e521f6f16";
+  let apiKey = "597c40c39084687093b091cd48b366f8";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
