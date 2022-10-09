@@ -3,6 +3,15 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 }
 
+function displayIcon(response) {
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
 function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -66,7 +75,7 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 function retrievePosition(position) {
-  let apiKey = "ed238469f9b5e9d801834270e65449bc";
+  let apiKey = "e974f932ed118d7566475c3e521f6f16";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
