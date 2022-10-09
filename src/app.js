@@ -1,3 +1,8 @@
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+}
+
 function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -40,9 +45,13 @@ function displayWeather(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
 }
+let apiKey = "e974f932ed118d7566475c3e521f6f16";
+let apiUrl =
+  "https://api.openweathermap.org/data/2.5/weather?q=Dallas&appid=${apiKey}&units=metric";
+axios.get(apiUrl).then(displayTemperature);
 
 function searchCity(city) {
-  let apiKey = "ed238469f9b5e9d801834270e65449bc";
+  let apiKey = "e974f932ed118d7566475c3e521f6f16";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
