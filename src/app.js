@@ -7,9 +7,8 @@ function displayIcon(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
+    'https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png'
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function formatDate(date) {
@@ -63,6 +62,13 @@ function searchCity(city) {
   let apiKey = "e974f932ed118d7566475c3e521f6f16";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
+}
+
+function searchIcon(icon) {
+  let apiKey = "e974f932ed118d7566475c3e521f6f16";
+  let apiUrl =
+    "//api.openweathermap.org/data/2.5/weather?q=Dallas&appid=e974f932ed118d7566475c3e521f6f16&units=metric";
+  axios.get(apiUrl).then(displayIcon);
 }
 
 function search(event) {
