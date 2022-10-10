@@ -100,7 +100,7 @@ searchCity("Dallas");
 //function convertToFarenheit(event) {
 //event.preventDefault();
 //let farenheitUnit = document.querySelector("#temperature");
-//farenheitUnit.innerHTML = `🌖 48°`;
+//farenheitUnit.innerHTML = `°`;
 //}
 
 //let farenheit = document.querySelector("#farenheit-link");
@@ -109,7 +109,7 @@ searchCity("Dallas");
 //function convertToCelsius(event) {
 //event.preventDefault();
 //let farenheitUnit = document.querySelector("#temperature");
-//farenheitUnit.innerHTML = `🌖 9°`;
+//farenheitUnit.innerHTML = `°`;
 //}
 
 //let celsius = document.querySelector("#celsius-link");
