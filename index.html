@@ -2,91 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andreska's Final Weather App</title>
-          <link
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
       rel="stylesheet"
-      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App</title>
   </head>
   <body>
-    <div class="weather-app">
-     <div class="container">
-     <header>
-      <form action="/" method="GET" class="form" id="search-form">
-          <input type="search" id="city-input" placeholder="Type a city" class="search-field" />
-          <button type="submit" class="btn btn-outline-light">Search</button>
-          <button type="submit" class="btn btn-outline-light-1" id="current-position">Current</button>
-      </form>
-      </header>
-      <h1>Welcome.</h1>
-      <h2 id="city"></h2>
-         <h2>
-        <span class="temperature" id="temperature"></span>
-        <span class="units">
-          <a href="#" id="celsius-link">°C</a>
-      <a href="#" id="farenheit-link">°F</a> 
-    </span>
-    <img
-    src = "https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-    id ="icon"
-    />
-        </h2>
-      <section class="description">
-        <p class=time>
-          <strong>
-            <span id="current-time"></span>
-          </strong></br>
-          <span id="description"></span>
-        </p>
-        
-        <p class="details">
-          Humidity: <span id="humidity"></span>%<br />
-          Wind: <span id="wind"></span> km/h
-        </p>
-        <hr />
-        <div class="row">
-          <div class="col monday">Mon</div>
-          <div class="col tuesday">Tue</div>
-          <div class="col wednesday">Wed</div>
-          <div class="col thursday">Thu</div>
-          <div class="col friday">Fri</div>
-          <div class="col saturday">Sat</div>
-          <div class="col sunday">Sun</div>
-        </div>
-        <div class="row">
-            <div class="col column-one">🌤</div>
-            <div class="col column-two">🌤</div>
-            <div class="col column-three">🌤</div>
-            <div class="col column-four">⛈</div>
-            <div class="col column-five">⛈</div>
-            <div class="col column-six">🌧</div>
-            <div class="col column-seven">🌤</div>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col temperature-monday">88° 31°</div>
-          <div class="col temperature-tuesday">88° 31°</div>
-          <div class="col temperature-wednesday">84° 29°</div>
-          <div class="col temperature-thursday">88° 31°</div>
-          <div class="col temperature-friday">90° 32°</div>
-          <div class="col temperature-saturday">83° 28°</div>
-          <div class="col temperature-sunday">84° 29°</div>
-          </div>
-        </div>
-        </section>
-        <footer></footer>
-        </div>
-        </div>
-    <div class="signature">
-      <small>
-      <a href="https://github.com/kandreska/final-project-weather-app.git">
-      Open Source Code</a> <span> by Kristin Andreska </span>
-      </small>
+        <small>
+          <a
+            href="https://github.com/wecodeschool/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Matt Delac
+        </small>
       </div>
+    </div>
     <script src="src/app.js"></script>
   </body>
 </html>
