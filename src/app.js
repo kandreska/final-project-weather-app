@@ -75,10 +75,11 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-2">
         <div class="weather-forecast-date">${forecastDay.dt}</div>
         <img
@@ -92,6 +93,7 @@ function displayForecast(response) {
         </div>
       </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -102,7 +104,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "597c40c39084687093b091cd48b366f8";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=imperial`;
   console.log(apiURL);
   axios.get(apiURL).then(displayForecast);
 }
@@ -170,21 +172,3 @@ let currentPositionButton = document.querySelector("#current-position");
 currentPositionButton.addEventListener("click", currentLocation);
 
 searchCity("Dallas");
-
-//function convertToFarenheit(event) {
-//event.preventDefault();
-//let farenheitUnit = document.querySelector("#temperature");
-//farenheitUnit.innerHTML = `°`;
-//}
-
-//let farenheit = document.querySelector("#farenheit-link");
-//farenheit.addEventListener("click", convertToFarenheit);
-
-//function convertToCelsius(event) {
-//event.preventDefault();
-//let farenheitUnit = document.querySelector("#temperature");
-//farenheitUnit.innerHTML = `°`;
-//}
-
-//let celsius = document.querySelector("#celsius-link");
-//celsius.addEventListener("click", convertToCelsius);
