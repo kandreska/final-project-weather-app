@@ -40,6 +40,7 @@ h1 {
 .column-seven {
   font-size: 30px;
   text-align: center;
+  color: #8da1b5;
 }
 
 .monday,
@@ -52,6 +53,7 @@ h1 {
   color: #fff;
   font-family: "Georgia", serif;
   text-align: center;
+  color: #8da1b5;
 }
 .temperature-monday,
 .temperature-tuesday,
@@ -63,6 +65,7 @@ h1 {
   color: #fff;
   font-family: "Georgia", serif;
   text-align: center;
+  color: #8da1b5;
 }
 .btn-outline-light {
   background-color: #fff;
