@@ -135,14 +135,14 @@ axios.get(apiUrl).then(displayTemperature);
 
 function searchCity(city) {
   let apiKey = "597c40c39084687093b091cd48b366f8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
 
 function searchIcon(icon) {
   let apiKey = "597c40c39084687093b091cd48b366f8";
   let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?q=Dallas&appid=597c40c39084687093b091cd48b366f8&units=metric";
+    "https://api.openweathermap.org/data/2.5/weather?q=Dallas&appid=597c40c39084687093b091cd48b366f8&units=imperial";
   axios.get(apiUrl).then(displayIcon);
 }
 
